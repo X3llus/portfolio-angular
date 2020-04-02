@@ -1,0 +1,22 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/X3llus/portfolio.git"
+  },
+  "author": "Braden Coates",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/X3llus/portfolio/issues"
+  },
+  "homepage": "https://github.com/X3llus/portfolio#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
