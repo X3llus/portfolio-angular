@@ -24,7 +24,7 @@ app.use("/header", headerRoute);
 
 // Listening for connections
 https.createServer({
-  key: fs.readFileSync('./key.pem'),
-  cert: fs.readFileSync('./cert.pem'),
+  key: fs.readFileSync('./certs/key.pem'),
+  cert: fs.readFileSync('./certs/cert.pem'),
   passphrase: 'YOUR PASSPHRASE HERE'
 }, app).listen(8080);
