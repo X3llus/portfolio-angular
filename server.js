@@ -1,8 +1,6 @@
 // Imports
 const express = require("express");
 const bodyParser = require("body-parser");
-const https = require('https');
-const fs = require('fs');
 
 // Setting up the express app middleware
 const app = express();
@@ -23,8 +21,4 @@ app.use("/resume", resumeRoute);
 app.use("/header", headerRoute);
 
 // Listening for connections
-https.createServer({
-  key: fs.readFileSync('./key.pem'),
-  cert: fs.readFileSync('./cert.pem'),
-  passphrase: 'YOUR PASSPHRASE HERE'
-}, app).listen(8080);
+app.listen(8080, () => console.log("listening on port 8080"));
