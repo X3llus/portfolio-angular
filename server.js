@@ -11,14 +11,18 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Setting up routes
+const errorRoute = require("./routes/404.js");
+const headerRoute = require("./routes/header.js");
 const indexRoute = require("./routes/index.js");
 const resumeRoute = require("./routes/resume.js");
-const headerRoute = require("./routes/header.js");
+const contactRoute = require("./routes/contact.js")
 
 // Making routes
+app.use("/header", headerRoute);
 app.use("/", indexRoute);
 app.use("/resume", resumeRoute);
-app.use("/header", headerRoute);
+app.use("/contact", contactRoute);
+app.use("*", errorRoute);
 
 // Listening for connections
 app.listen(8080, () => console.log("listening on port 8080"));
