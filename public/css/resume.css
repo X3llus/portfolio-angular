@@ -71,7 +71,6 @@ p {
   width: 90%;
   margin-left: 5%;
   margin-top: 8px;
-  /* text-align: left; */
 }
 
 .contact li {
@@ -161,4 +160,8 @@ main > p {
   border-radius: 12px;
   background-color: lightgrey;
   padding: 8px;
+}
+
+html {
+  padding-bottom: 2em;
 }
