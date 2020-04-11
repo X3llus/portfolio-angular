@@ -3,26 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>Contact Me</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/master.css">
     <script src="javascript/jquery.min.js" defer></script>
+    <script src="javascript/bootstrap.min.js" defer></script>
     <script src="javascript/header.js" charset="utf-8" defer></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/master.css">
   </head>
   <body>
     <header></header>
-    <main>
+    <main class="container">
       <form action="/contact" method="post">
-        <fieldset>
-          <label for="from">From: </label>
-          <input type="email" name="from" placeholder="your@email.com">
+        <fieldset class="form-group">
+          <input class="form-control" type="name" name="name" placeholder="Name">
         </fieldset>
-        <fieldset>
-          <label for="subject">Subject: </label>
-          <input type="text" name="subject">
+        <fieldset class="form-group">
+          <input class="form-control" type="email" name="email" placeholder="Email Address">
         </fieldset>
-        <label for="message">Message</label>
-        <textarea name="message" rows="8" cols="80"></textarea>
-        <input type="submit" name="submit" value="Send">
+        <fieldset class="form-group">
+          <textarea class="form-group" name="text" rows="8"></textarea>
+        </fieldset>
+        <input class="btn btn-secondary btn-block" type="submit" name="submit" value="Send">
       </form>
     </main>
   </body>

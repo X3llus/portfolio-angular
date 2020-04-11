@@ -16,10 +16,10 @@ var transporter = nodemailer.createTransport({
 
 // Mail class
 class Mail {
-  constructor(from, subject, text) {
+  constructor(name, mail, text) {
     this.from = email.sender;
     this.to = email.myEmail;
-    this.subject = subject + " from " + from;
+    this.subject = name + " | " + mail;
     this.text = text;
     this.options = {
       from: this.from,
@@ -43,11 +43,11 @@ class Mail {
 //function for sending message
 async function sendMessage(req) {
   var body = req.body;
-  var from = body.from;
-  var subject = body.subject;
-  var message = body.message;
+  var name = body.name;
+  var mail = body.email;
+  var text = body.text;
 
-  mail = new Mail(from, subject, message);
+  mail = new Mail(name, mail, text);
   return mail.send()
 }
 
