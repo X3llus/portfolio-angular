@@ -7,7 +7,13 @@ var email = require("../private.json");
 
 // Variables
 var transporter = nodemailer.createTransport({
-  service: "outlook",
+  host: 'smtp.office365.com',
+  secureConnection: false,
+  port: 587,
+  tls: {
+    ciphers: 'SSLv3'
+  },
+//  service: "outlook",
   auth: {
     user: email.sender,
     pass: email.password
