@@ -65,7 +65,7 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
   sendMessage(req)
     .then(value => {
-      res.sendFile(path.resolve(__dirname + "/../html/contact.html"));
+      res.sendFile(path.resolve(__dirname + "/../html/emailSuccess.html"));
     })
     .catch(err => {
       res.send("ERROR");
