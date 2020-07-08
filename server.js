@@ -27,4 +27,4 @@ app.use("/contact", contactRoute);
 app.use("*", errorRoute);
 
 // Listening for connections
-app.listen(80, () => console.log("listening on port 8080"));
+app.listen(80, () => console.log("listening on port 80"));
