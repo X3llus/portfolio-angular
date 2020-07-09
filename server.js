@@ -1,6 +1,24 @@
 // Imports
 const express = require("express");
 const bodyParser = require("body-parser");
+const sitemap = require("express-sitemap");
+
+// Setting up sitemap
+sitemap({
+  map: {
+    "/": ["get"],
+    "/resume": ["get"],
+    "/projects": ["get"],
+    "/contact": ["get", "post"]
+  },
+  route: {
+    "/ALL": {
+      lastmod: "2020-07-09",
+      changefreq: "always",
+      priority: 1.0
+    }
+  }
+}).XMLtoFile("./public/sitemap.xml");
 
 // Setting up the express app middleware
 const app = express();

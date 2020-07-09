@@ -4,7 +4,9 @@
   "description": "Portfolio website",
   "main": "server.js",
   "scripts": {
-    "test": "sudo nodemon server.js"
+    "test": "sudo nodemon server.js",
+    "run": "sudo node server.js",
+    "background": "sudo node server.js &"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   "homepage": "https://github.com/X3llus/portfolio#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-sitemap": "^1.8.0",
     "nodemailer": "^6.4.6"
   }
 }
