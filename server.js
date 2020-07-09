@@ -18,7 +18,7 @@ sitemap({
       priority: 1.0
     }
   },
-  url: "http://bradencoates.ca"
+  url: "bradencoates.ca"
 }).XMLtoFile("./public/sitemap.xml");
 
 // Setting up the express app middleware
