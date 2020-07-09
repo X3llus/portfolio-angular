@@ -6,10 +6,10 @@ const sitemap = require("express-sitemap");
 // Setting up sitemap
 sitemap({
   map: {
-    "/": ["get"],
-    "/resume": ["get"],
-    "/projects": ["get"],
-    "/contact": ["get", "post"]
+    "http://bradencoates.ca/": ["get"],
+    "http://bradencoates.ca/resume": ["get"],
+    "http://bradencoates.ca/projects": ["get"],
+    "http://bradencoates.ca/contact": ["get", "post"]
   },
   route: {
     "/ALL": {
