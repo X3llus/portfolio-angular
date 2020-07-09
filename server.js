@@ -6,10 +6,10 @@ const sitemap = require("express-sitemap");
 // Setting up sitemap
 sitemap({
   map: {
-    "http://bradencoates.ca/": ["get"],
-    "http://bradencoates.ca/resume": ["get"],
-    "http://bradencoates.ca/projects": ["get"],
-    "http://bradencoates.ca/contact": ["get", "post"]
+    "/": ["get"],
+    "/resume": ["get"],
+    "/projects": ["get"],
+    "/contact": ["get", "post"]
   },
   route: {
     "/ALL": {
@@ -17,7 +17,8 @@ sitemap({
       changefreq: "always",
       priority: 1.0
     }
-  }
+  },
+  url: "http://bradencoates.ca"
 }).XMLtoFile("./public/sitemap.xml");
 
 // Setting up the express app middleware
