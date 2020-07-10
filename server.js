@@ -12,7 +12,12 @@ sitemap({
     "/contact": ["get", "post"]
   },
   route: {
-    "/ALL": {
+    "/": {
+      lastmod: "2020-07-09",
+      changefreq: "always",
+      priority: 1.0
+    },
+    "/resume": {
       lastmod: "2020-07-09",
       changefreq: "always",
       priority: 1.0
@@ -24,25 +29,22 @@ sitemap({
 // Setting up the express app middleware
 const app = express();
 app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/html", {
+  extensions: ["html"]
+}));
 app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(bodyParser.json());
 
 // Setting up routes
-const errorRoute = require("./routes/404.js");
-const headerRoute = require("./routes/header.js");
-const indexRoute = require("./routes/index.js");
-const resumeRoute = require("./routes/resume.js");
 const contactRoute = require("./routes/contact.js");
-const projectsRoute = require("./routes/projects.js");
+const loginRoute = require("./routes/login.js");
+const errorRoute = require("./routes/404.js");
 
 // Making routes
-app.use("/header", headerRoute);
-app.use("/", indexRoute);
-app.use("/projects", projectsRoute);
-app.use("/resume", resumeRoute);
 app.use("/contact", contactRoute);
+app.use("/login", loginRoute);
 app.use("*", errorRoute);
 
 // Listening for connections

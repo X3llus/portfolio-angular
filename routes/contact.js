@@ -54,13 +54,8 @@ async function sendMessage(req) {
   var text = body.text;
 
   mail = new Mail(name, mail, text);
-  return mail.send()
+  return mail.send();
 }
-
-// setting up router
-router.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname + "/../html/contact.html"));
-});
 
 router.post("/", (req, res) => {
   sendMessage(req)
