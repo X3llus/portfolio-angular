@@ -4,8 +4,8 @@ var router = express.Router();
 var path = require("path");
 
 // GET request to /
-router.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname + "/../html/projects.html"));
+router.post("/", (req, res) => {
+  
 });
 
 module.exports = router;
