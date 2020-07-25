@@ -2,4 +2,4 @@ node_modules
 private.json
 .vscode
 **/sitemap.xml
-passwordCreator.js
+**/sessions

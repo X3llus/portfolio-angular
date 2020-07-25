@@ -19,3 +19,8 @@
 textarea {
   width: 100%;
 }
+
+#loginForm {
+  display: flex;
+  justify-content: space-around;
+}

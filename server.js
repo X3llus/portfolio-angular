@@ -2,6 +2,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const sitemap = require("express-sitemap");
+const session = require("express-session");
+const uuid = require('uuid/v4');
+const auth = require("./private.json");
+const FileStore = require('session-file-store')(session);
+
+// Salt 12
 
 // Setting up sitemap
 sitemap({
@@ -36,6 +42,15 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(bodyParser.json());
+app.use(session({
+  genid: (req) => {
+    return uuid();
+  },
+  store: new FileStore(),
+  secret: auth.secret,
+  resave: false,
+  saveUninitialized: true
+}));
 
 // Setting up routes
 const contactRoute = require("./routes/contact.js");
