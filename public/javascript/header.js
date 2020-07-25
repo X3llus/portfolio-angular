@@ -1,3 +1,3 @@
 $(() => {
-  $("header").load("/header");
-});
+    $("header").load("/header");
+})

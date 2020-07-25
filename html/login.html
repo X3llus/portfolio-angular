@@ -2,31 +2,40 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="Homepage for Braden Coates' portfolio website"> 
-  <meta name="keywords" content="Braden Coates, Braden, Coates, Programmer, Software Developer, Developer, Portfolio, Hamilton, Stoney Creek, Ontario, Canada">
-  <meta name="author" content="Braden Coates">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="description" content="Homepage for Braden Coates' portfolio website">
+    <meta name="keywords" content="Braden Coates, Braden, Coates, Programmer, Software Developer, Developer, Portfolio, Hamilton, Stoney Creek, Ontario, Canada">
+    <meta name="author" content="Braden Coates">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Home Page</title>
-  <script src="javascript/jquery.min.js" defer></script>
-  <script src="javascript/bootstrap.min.js" defer></script>
-  <script src="javascript/header.js" charset="utf-8" defer></script>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/master.css">
-  </head>
+    <title>Home Page</title>
+    <script src="javascript/jquery.min.js" defer></script>
+    <script src="javascript/bootstrap.min.js" defer></script>
+    <script src="javascript/header.js" charset="utf-8" defer></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/master.css">
+    </head>
 
-  <body>
+    <body>
 
-  <header>
-  </header>
+    <header>
+    </header>
 
-  <main class="container">
-  </main>
+    <main class="container" id="loginForm">
+        <form action="/login" method="POST">
+            <fieldset class="form-group">
+                <label for="password">
+                    Password
+                </label>
+                <input class="form-control" type="text" required>
+            </fieldset>
+            <input class="btn btn-primary" type="submit" value="Login">
+        </form>
+    </main>
 
-  <footer>
-  </footer>
+    <footer>
+    </footer>
 </body>
 
 </html>
