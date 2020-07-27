@@ -60,7 +60,7 @@ async function sendMessage(req) {
 router.post("/", (req, res) => {
   sendMessage(req)
     .then(value => {
-      res.sendFile(path.resolve(__dirname + "/../html/emailSuccess.html"));
+      res.redirect("/emailSuccess");
     })
     .catch(err => {
       res.send("ERROR");
