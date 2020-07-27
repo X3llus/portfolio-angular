@@ -60,7 +60,7 @@ async function sendMessage(req) {
 router.post("/", (req, res) => {
   sendMessage(req)
     .then(value => {
-      res.redirect("/emailSuccess");
+      res.redirect("/#/email-success");
     })
     .catch(err => {
       res.send("ERROR");

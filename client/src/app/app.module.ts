@@ -20,6 +20,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { EmailSuccessComponent } from './email-success/email-success.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {MatInputModule} from '@angular/material/input';
     HomeComponent,
     ProjectsComponent,
     ResumeComponent,
-    ContactComponent
+    ContactComponent,
+    EmailSuccessComponent
   ],
   imports: [
     BrowserModule,
