@@ -1,48 +1,46 @@
-<section>
-    <mat-toolbar class="mat-elevation-z6" color="primary">
-        <div fxShow="true" fxHide.gt-sm="true">
-            <!-- <a (click)="sidenav.toggle()">show</a> -->
-            <button
-                class="mat-elevation-z1"
-                type="button"
-                aria-label="Toggle sidenav"
-                mat-icon-button
-                (click)="sidenav.toggle()">
-                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-            </button>
-        </div>
-        <span>Braden Coates</span>
-        <div fxShow="true" fxHide.lt-md="true">
-            <mat-divider [vertical]="true"></mat-divider>
+<mat-toolbar class="mat-elevation-z6" color="primary">
+    <div fxShow="true" fxHide.gt-sm="true">
+        <!-- <a (click)="sidenav.toggle()">show</a> -->
+        <button
+            class="mat-elevation-z1"
+            type="button"
+            aria-label="Toggle sidenav"
+            mat-icon-button
+            (click)="sidenav.toggle()">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+    </div>
+    <span>Braden Coates</span>
+    <div fxShow="true" fxHide.lt-md="true">
+        <mat-divider [vertical]="true"></mat-divider>
+        <a class="mat-focus-indicator" mat-button routerLink="/home">Home</a>
+        <mat-divider [vertical]="true"></mat-divider>
+        <a class="mat-focus-indicator" mat-button routerLink="/projects">Projects</a>
+        <mat-divider [vertical]="true"></mat-divider>
+        <a class="mat-focus-indicator" mat-button routerLink="/resume">Resume</a>
+        <mat-divider [vertical]="true"></mat-divider>
+        <a class="mat-focus-indicator" mat-button target="_blank" href="https://github.com/X3llus">GitHub</a>
+        <mat-divider [vertical]="true"></mat-divider>
+        <a class="mat-focus-indicator" mat-button routerLink="/contact">Contact Me</a>
+        <mat-divider [vertical]="true"></mat-divider>
+    </div>
+</mat-toolbar>
+<mat-sidenav-container color="accent" fxFlexFill>
+    <mat-sidenav #sidenav fxLayout="column" mode="side" opened="false">
+        <div fxLayout="column">
             <a class="mat-focus-indicator" mat-button routerLink="/home">Home</a>
-            <mat-divider [vertical]="true"></mat-divider>
+            <mat-divider></mat-divider>
             <a class="mat-focus-indicator" mat-button routerLink="/projects">Projects</a>
-            <mat-divider [vertical]="true"></mat-divider>
+            <mat-divider></mat-divider>
             <a class="mat-focus-indicator" mat-button routerLink="/resume">Resume</a>
-            <mat-divider [vertical]="true"></mat-divider>
+            <mat-divider></mat-divider>
             <a class="mat-focus-indicator" mat-button target="_blank" href="https://github.com/X3llus">GitHub</a>
-            <mat-divider [vertical]="true"></mat-divider>
+            <mat-divider></mat-divider>
             <a class="mat-focus-indicator" mat-button routerLink="/contact">Contact Me</a>
-            <mat-divider [vertical]="true"></mat-divider>
+            <mat-divider></mat-divider>
         </div>
-    </mat-toolbar>
-    <mat-sidenav-container fxFlexFill>
-        <mat-sidenav #sidenav fxLayout="column" mode="side" opened="false">
-            <div fxLayout="column">
-                <a class="mat-focus-indicator" mat-button routerLink="/home">Home</a>
-                <mat-divider></mat-divider>
-                <a class="mat-focus-indicator" mat-button routerLink="/projects">Projects</a>
-                <mat-divider></mat-divider>
-                <a class="mat-focus-indicator" mat-button routerLink="/resume">Resume</a>
-                <mat-divider></mat-divider>
-                <a class="mat-focus-indicator" mat-button target="_blank" href="https://github.com/X3llus">GitHub</a>
-                <mat-divider></mat-divider>
-                <a class="mat-focus-indicator" mat-button routerLink="/contact">Contact Me</a>
-                <mat-divider></mat-divider>
-            </div>
-        </mat-sidenav>
-        <mat-sidenav-content fxFlexFill>
-            <router-outlet></router-outlet>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
-</section>
+    </mat-sidenav>
+    <mat-sidenav-content (click)="sidenav.opened=false" fxFlexFill>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
