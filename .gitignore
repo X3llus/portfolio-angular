@@ -3,3 +3,4 @@ private.json
 .vscode
 **/sitemap.xml
 **/sessions
+**/.well-known/**
