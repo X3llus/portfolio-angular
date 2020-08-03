@@ -34,6 +34,12 @@ sitemap({
 
 // Setting up the express app middleware
 const app = express();
+app.use((req, res, next) => {
+  if (!req.secure) {
+    return res.redirect('https://' + req.headers.host + req.url);
+  }
+  next();
+});
 app.use(express.static(__dirname + "/public", { dotfiles: "allow" }));
 app.use(express.static(__dirname + "/client/dist/portfolio"));
 app.use(bodyParser.urlencoded({
