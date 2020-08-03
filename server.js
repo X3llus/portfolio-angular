@@ -6,7 +6,15 @@ const session = require("express-session");
 const uuid = require('uuid');
 const auth = require("./private.json");
 const FileStore = require('session-file-store')(session);
-var path = require('path');
+
+const fs = require('fs');
+const http = require('http');
+const https = require('https');
+
+const credentials = {
+  key: fs.readFileSync('/etc/letsencrypt/live/bradencoates.ca/privkey.pem', 'utf8'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/bradencoates.ca/fullchain.pem', 'utf8')
+}
 
 // Salt 12
 
@@ -26,8 +34,8 @@ sitemap({
 
 // Setting up the express app middleware
 const app = express();
+app.use(express.static(__dirname + "/public", { dotfiles: "allow" }));
 app.use(express.static(__dirname + "/client/dist/portfolio"));
-app.use('/public', express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({
   extended: false
 }));
@@ -51,4 +59,9 @@ app.use("/contact", contactRoute);
 app.use("/login", loginRoute);
 
 // Listening for connections
-app.listen(80, () => console.log("listening on port 80"));
+
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(80, () => console.log("HTTP Server running on port 80"));
+httpsServer.listen(443, () => console.log("HTTPS Server running on port 443"));
