@@ -50,13 +50,9 @@ app.use(session({
   saveUninitialized: true
 }));
 
-// Setting up routes
-const contactRoute = require("./routes/contact.js");
-const loginRoute = require("./routes/login.js");
+const api = require("./routes/api.js");
 
-// Making routes
-app.use("/contact", contactRoute);
-app.use("/login", loginRoute);
+app.use("/api", api);
 
 // Listening for connections
 

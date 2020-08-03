@@ -58,6 +58,7 @@ async function sendMessage(req) {
 }
 
 router.post("/", (req, res) => {
+  console.log("received");
   sendMessage(req)
     .then(value => {
       res.redirect("/#/email-success");
