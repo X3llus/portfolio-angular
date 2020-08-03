@@ -18,9 +18,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { EmailSuccessComponent } from './email-success/email-success.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { EmailSuccessComponent } from './email-success/email-success.component';
     ProjectsComponent,
     ResumeComponent,
     ContactComponent,
-    EmailSuccessComponent
+    EmailSuccessComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
