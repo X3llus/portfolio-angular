@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ContactComponent } from './contact/contact.component';
+import { EmailSuccessComponent } from './email-success/email-success.component';
+import { LoginComponent } from './login/login.component';
 
 // Angular material imports
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,8 +22,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { EmailSuccessComponent } from './email-success/email-success.component';
-import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
