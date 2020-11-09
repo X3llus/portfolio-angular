@@ -1,0 +1,39 @@
+<mat-toolbar style="height: 6vh;" color="primary">
+  <div fxShow="true" fxHide.gt-sm="true">
+    <button
+      class="mat-elevation-z1"
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="sidenav.toggle()">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+  </div>
+  <span>Braden Coates</span>
+  <div>
+    <a mat-list-item routerLink="/welcome"> Home </a>
+    <mat-divider [vertical]="true"></mat-divider>
+    <a mat-list-item routerLink="/about"> About Me </a>
+    <mat-divider [vertical]="true"></mat-divider>
+    <a mat-list-item routerLink="/resume"> Resume </a>
+    <mat-divider [vertical]="true"></mat-divider>
+    <a mat-list-item routerLink="/contact"> Where To Find Me </a>
+  </div>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+
+      <a mat-list-item routerLink="/welcome"> Home </a>
+      <a mat-list-item routerLink="/welcome"> About Me </a>
+      <a mat-list-item routerLink="/welcome"> Resume </a>
+      <a mat-list-item routerLink="/welcome"> Where to find me </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 94vh;" >
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
